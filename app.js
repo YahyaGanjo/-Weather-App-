@@ -24,6 +24,21 @@ window.addEventListener("load", () => {
           document.querySelector(
             ".icon"
           ).src = `${data.current.condition.icon}`;
+          const degreeUnit = document.querySelector(".degree-section");
+          degreeUnit.addEventListener("click", () => {
+            const unit = document.querySelector("span");
+            if (unit.innerText === "C") {
+              document.querySelector(
+                ".temperature-degree"
+              ).innerHTML = `${data.current.temp_f}`;
+              unit.innerHTML = "F";
+            } else {
+              document.querySelector(
+                ".temperature-degree"
+              ).innerHTML = `${data.current.temp_c}`;
+              unit.innerHTML = "C";
+            }
+          });
         });
     });
   }
