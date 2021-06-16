@@ -7,7 +7,8 @@ window.addEventListener("load", () => {
       long = position.coords.longitude;
       lat = position.coords.latitude;
 
-      const api = `http://api.weatherapi.com/v1/current.json?key=edd7b783b54148fea28222124211506&q=${lat},${long}&aqi=no`;
+      const proxy = "https://cors-anywhere.herokuapp.com/";
+      const api = `${proxy}http://api.weatherapi.com/v1/current.json?key=edd7b783b54148fea28222124211506&q=${lat},${long}&aqi=no`;
 
       fetch(api)
         .then((response) => response.json())
